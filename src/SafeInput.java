@@ -1,7 +1,7 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.InputMismatchException;
 
 public class SafeInput {
     public static String getNonZeroLenString(Scanner pipe, String prompt)
@@ -121,10 +121,10 @@ public class SafeInput {
             System.out.print("\n" + prompt + ": "); // show prompt add space
             response = pipe.nextLine();
 
-            if (response.equalsIgnoreCase("N")) {
+            if (response.equalsIgnoreCase("Y")) {
                 getYNConfirm = true;
                 valid = true;
-            } else if (response.equalsIgnoreCase("Y")) {
+            } else if (response.equalsIgnoreCase("N")) {
                 getYNConfirm = false;
                 valid = true;
             } else {
