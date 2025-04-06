@@ -17,7 +17,7 @@ public class Main {
                case "A" -> addItem();
                case "D" -> deleteItem();
                case "I" -> insertItem();
-               // case "P" -> printList();
+               case "P" -> printList();
                 case "Q" -> {
                     if (SafeInput.getYNConfirm(in, "Are you sure you wish to quit the program? (Y/N): ")) {
                         options = false;
@@ -68,6 +68,17 @@ public class Main {
         int position = SafeInput.getRangedInt(in, "Enter the position in which you would like to add an item", 1, myArrList.size() + 1);
         myArrList.add(position - 1, item);
         System.out.println("Your item has been inserted into position #" + (position));
+    }
+
+    private static void printList() {
+        System.out.println("\nHere is your current list:");
+        if (myArrList.isEmpty()) {
+            System.out.println("[Empty]");
+        } else {
+            for (int i = 0; i < myArrList.size(); i++) {
+                System.out.println((i + 1) + ". " + myArrList.get(i));
+            }
+        }
     }
 
 }
